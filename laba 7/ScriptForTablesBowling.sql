@@ -64,7 +64,7 @@ CREATE TABLE track (
 CREATE TABLE booking (
     BookingId INT AUTO_INCREMENT PRIMARY KEY,
     CustomerDiscountID INT NOT NULL,
-    Duration INT NOT NULL,
+    MAXDuration INT NOT NULL,
     NumberOfPlayers INT NOT NULL,
     FinalPrice DECIMAL(10,2) NOT NULL,
     ReservationUsed BOOLEAN NOT NULL,
@@ -81,7 +81,6 @@ CREATE TABLE bookingtrack (
     BookingTrackId INT AUTO_INCREMENT PRIMARY KEY,
     BookingId INT NOT NULL,
     TrackId INT NOT NULL,
-    StartTime TIME NOT NULL,
     Duration INT NOT NULL,
     FOREIGN KEY (BookingId) REFERENCES booking(BookingId),
     FOREIGN KEY (TrackId) REFERENCES track(TrackId)
